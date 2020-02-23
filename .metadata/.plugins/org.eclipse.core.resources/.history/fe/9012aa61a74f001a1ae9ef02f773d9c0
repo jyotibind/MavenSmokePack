@@ -1,0 +1,58 @@
+package day09feb;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.*;
+import org.apache.http.*;
+import java.io.*;
+
+public class GetRequestTest {
+
+	public static void main(String[] args) throws ClientProtocolException , IOException{
+		// TODO Auto-generated method stub
+		
+		CloseableHttpClient Closeablehttpclient= HttpClients.createDefault();
+		HttpGet get= new HttpGet("https://reqres.in/api/users?page=2");
+		
+		
+		//closeableHttpResponse = CloseableHttpClient.execute(get);
+		int statusCode=closeableHttpResponse.getStatusLine().getStatusCode();
+		System.out.println(statusCode);
+		
+		
+		Header[] headers=closeableHttpResponse.getAllHeaders();
+		for (int i=0;i<headers.length;i++)
+		{
+			String sHeaderKey = headers[i].getName();
+			String sHeaderValue=headers[i].getValue();
+			System.out.println(sHeaderKey + "-->"+sHeaderValue);
+			
+			String response= EntityUtils.toString(closeableHttpResponse.getEntity(),"UTF-8");
+			System.out.println(response);
+			
+			JSONObject jSONObj = new JSONObject(response);
+			Integer sTotal = (Integer) jSONObj.get("total");
+			Integer sPage = (Integer) jSONObj.get("page");
+			System.out.println("Total --> "+ sTotal + " and Page -->" + sPage);
+			
+			JSONArray JSON_array = jSONObj.getJSONArray("data");
+			JSONObject JSONObj_array= JSON_array.getJSONObject(0);
+			String strEmailid= (String) JSONObj_array.get("email");
+			System.out.println(strEmailid);
+			
+		}
+		
+		
+		
+		
+
+	}
+
+}

@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="NewTest" duration-ms="40" started-at="2020-02-22T04:02:49Z" finished-at="2020-02-22T04:02:49Z">
+  <suite name="Suite" duration-ms="12" started-at="2020-02-23T03:29:11Z" finished-at="2020-02-23T03:29:11Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="40" started-at="2020-02-22T04:02:49Z" finished-at="2020-02-22T04:02:49Z">
-      <class name="NewTest">
-        <test-method status="PASS" signature="f()[pri:0, instance:NewTest@7f63425a]" name="f" duration-ms="15" started-at="2020-02-22T09:32:49Z" finished-at="2020-02-22T09:32:49Z">
+    <test name="Test" duration-ms="12" started-at="2020-02-23T03:29:11Z" finished-at="2020-02-23T03:29:11Z">
+      <class name="testng.LogintestCase">
+        <test-method status="PASS" signature="verify()[pri:0, instance:testng.LogintestCase@6c3f5566]" name="verify" duration-ms="0" started-at="2020-02-23T08:59:11Z" finished-at="2020-02-23T08:59:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify -->
+      </class> <!-- testng.LogintestCase -->
+      <class name="testng.NewTest">
+        <test-method status="PASS" signature="f()[pri:0, instance:testng.NewTest@80ec1f8]" name="f" duration-ms="4" started-at="2020-02-23T08:59:11Z" finished-at="2020-02-23T08:59:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-      </class> <!-- NewTest -->
-    </test> <!-- Command line test -->
-  </suite> <!-- NewTest -->
+      </class> <!-- testng.NewTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -1,2 +1,5 @@
-NewTest.class
 Maven\LaunchBrowserTest1.class
+testng\NewTest.class
+testng\LogintestCase.class
+LogintestCase.class
+NewTest.class
